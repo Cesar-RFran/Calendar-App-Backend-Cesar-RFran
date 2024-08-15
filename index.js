@@ -1,8 +1,12 @@
 const express = require('express');
+const { dbConection } = require('./database/config');
 require('dotenv').config();
  
 //Crear el servidor de express
 const app = express();
+
+//BD
+dbConection()
  
 //Lectura y parseo del body
 app.use( express.json() );
