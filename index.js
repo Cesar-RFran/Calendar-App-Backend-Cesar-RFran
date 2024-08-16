@@ -20,6 +20,8 @@ app.use( express.json() );
 //Todo lo que este archivo va a exportar lo va a habilitar
 //en esta ruta
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/events', require('./routes/events'));
+
 // TODO CRUD: Eventos
  
 //Directorio publico
