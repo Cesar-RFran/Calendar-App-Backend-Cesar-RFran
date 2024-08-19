@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const { dbConection } = require('./database/config');
 const  cors = require('cors');
@@ -26,6 +27,11 @@ app.use('/api/events', require('./routes/events'));
  
 //Directorio publico
 app.use( express.static('public') );
+
+
+app.use('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'))
+} )
  
  
  
